@@ -48,6 +48,10 @@ p {
     line-height: 1.17em;
 }
 
+.title {
+    text-align: center;
+}
+
 img.background{
     position: relative;
     display: block;
@@ -121,6 +125,8 @@ img.background{
 
 .header img {
     display: inline-block;
+    height: 300px;
+    width: auto;
 }
 
 .about {
