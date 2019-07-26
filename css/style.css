@@ -64,14 +64,25 @@ p {
     padding: 0;
 }
 
-.navbar div {
-    background-color: var(--nav-item-color);
-    width: 150px;
-    height: 100%;
+.navbar .home {
     position: relative;
-    border-bottom-right-radius: 50px;
-    text-align: center;
+    top: -1rem;
     left: -1rem;
+}
+
+.navbar .nav-buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    opacity: 0.5;
+}
+.nav-buttons > div {
+    align-content: center;
+    padding: 1rem;
+    width: 12rem;
+    text-align: end;
+    box-sizing: border-box;
+    border-bottom-right-radius: 50px;
 }
 
 .navbar .home {
@@ -80,26 +91,34 @@ p {
     width: 6rem;
     height: 6rem;
     top: -1rem;
+    z-index: 15;
 }
 
 .navbar .about {
-    background-color: #aa73c980;
+    background-color: #aa73c9;
+    transform: translateX(-3rem);
+    z-index: 14;
 }
 
 .navbar .skills {
-    background-color: #43aeff80;
+    background-color: #43aeff;
+    transform: translateX(-6rem);
+    z-index: 13;
 }
 
 .navbar .tools {
-    background-color: #58C77A80;
+    background-color: #58C77A;
+    transform: translateX(-9rem);
+    z-index: 12;
 }
 
 .navbar .contact {
-    background-color: #f35c6380;
+    background-color: #f35c63;
     margin-left: auto;
     border-radius: 0;
     border-bottom-left-radius: 50px;
     left: 0;
+    text-align: start;
 }
 
 .navbar a {
@@ -109,6 +128,47 @@ p {
     width: 100%;
     height: 100%;
     line-height: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .navbar {
+        height: 2rem;
+        font-size: var(--font-size-0);
+    }
+    .nav-buttons > div {
+        padding: 0.5rem;
+        width: 7rem;
+    }
+    .navbar .home {
+        width: 4rem;
+        height: 4rem;
+        top: -1rem;
+        z-index: 15;
+    }
+    
+    .navbar .about {
+        transform: translateX(-2rem);
+    }
+    
+    .navbar .skills {
+        transform: translateX(-4rem);
+    }
+    
+    .navbar .tools {
+        transform: translateX(-6rem);
+    }
+}
+@media only screen and (max-width: 600px) {
+    .navbar .contact {
+        margin-left: 0;
+        border-radius: 0;
+        border-bottom-right-radius: 50px;
+        text-align: end;
+        transform: translateX(-8rem);
+    }
+    .navbar .nav-buttons {
+        width: 50%;
+    }
 }
 
 /* Content */
@@ -140,31 +200,36 @@ p {
 }
 
 .containter .background {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 10%;
     /* border: 10px solid blue; */
     position: absolute;
     z-index: -10;
     top: 0;
-    left: 0;
-}
-
-.containter .header {
-    grid-area: header;
-    height: 50vh;
+    left: calc(-10% - 2rem);
     text-align: center;
-    background: rgb(170,115,201);
-    background: radial-gradient(ellipse, rgba(170,115,201,0.5) 0%, rgba(170,115,201,0.3) 30%, rgba(255,255,255,1) 50%);
     overflow: hidden;
+    height: 100%;
 }
 
-.bg-header img{
-    position: relative;
-    display: inline-block;
-    transform: translateX(50%) rotate(40deg);
-    margin: auto;
-    filter: invert(81%) sepia(16%) saturate(7424%) hue-rotate(211deg) brightness(84%) contrast(91%);
+.containter .header .background {
+    grid-area: header / about;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 11.36%, rgba(255, 255, 255, 0.27) 31.02%, #FFFFFF 85.02%, #FFFFFF 100%), radial-gradient(147.00px at 50.08% 14.57%, rgba(170, 115, 201, 0.28) 0%, rgba(255, 255, 255, 0) 100%), rgba(170, 115, 201, 0.1);
+}
+
+.containter .skills .background {
+    grid-area: skills;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 11.36%, rgba(255, 255, 255, 0.27) 31.02%, #FFFFFF 85.02%, #FFFFFF 100%), radial-gradient(147.00px at 50.08% 14.57%, rgba(67, 174, 255, 0.28) 0%, rgba(255, 255, 255, 0) 100%), rgba(67, 174, 255, 0.1);
+}
+
+.containter .tools .background {
+    grid-area: tools;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 11.36%, rgba(255, 255, 255, 0.27) 31.02%, #FFFFFF 85.02%, #FFFFFF 100%), radial-gradient(147.00px at 50.08% 14.57%, rgba(88, 199, 122, 0.24) 0%, rgba(255, 255, 255, 0) 100%), rgba(88, 199, 122, 0.1);
+}
+
+.containter .contact .background {
+    grid-area: contact;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 11.36%, rgba(255, 255, 255, 0.27) 31.02%, #FFFFFF 85.02%, #FFFFFF 100%), radial-gradient(147.00px at 50.08% 14.57%, rgba(243, 92, 99, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(243, 92, 99, 0.1);
 }
 
 .header img {
@@ -178,13 +243,6 @@ p {
     overflow: hidden;
 }
 
-.containter .skills {
-    grid-area: skills;
-    background: rgb(67,174,255);
-    background: radial-gradient(ellipse, rgba(67,174,255,0.5046393557422969) 0%, rgba(67,174,255,0.30015756302521013) 20%, rgba(255,255,255,1) 50%);
-    overflow: hidden;
-}
-
 .skills > div {
     text-align: center;
 }
@@ -195,24 +253,10 @@ p {
     filter: invert(63%) sepia(17%) saturate(1551%) hue-rotate(166deg) brightness(91%) contrast(85%);
 }
 
-.containter .tools {
-    grid-area: tools;
-    background: rgb(88,199,122);
-    background: radial-gradient(ellipse, rgba(88,199,122,0.5018382352941176) 0%, rgba(88,199,122,0.29735644257703087) 30%, rgba(255,255,255,1) 50%);
-    overflow: hidden;
-}
-
 .bg-tools img{
     transform: rotate(104deg);
     margin: auto;
     filter: invert(70%) sepia(51%) saturate(369%) hue-rotate(94deg) brightness(97%) contrast(88%);
-}
-
-.containter .contact {
-    grid-area: contact;
-    overflow: hidden;
-    background: rgb(243,92,99);
-    background: radial-gradient(ellipse, rgba(243,92,99,0.5) 0%, rgba(243,92,99,0.3) 30%, rgba(255,255,255,1) 50%);
 }
 
 .bg-contact img{
