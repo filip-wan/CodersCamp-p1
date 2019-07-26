@@ -52,44 +52,58 @@ p {
     text-align: center;
 }
 
-img.background{
-    position: relative;
-    display: block;
-    transform: translateX(50%) rotate(40deg) ;
-    opacity: 0.5;
-    margin: auto;
-    z-index: -1;
-    filter: invert(20%) sepia(69%) saturate(2747%) hue-rotate(263deg) brightness(87%) contrast(98%);
-}
-
 .navbar {
-    background-color: var(--nav-color);
-    height: 5rem;
+    display: flex;
+    height: 3rem;
     width: 100%;
     position: fixed;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-/* Navbar */
-.navbar ul {
-    display: flex;
-    justify-content: space-around;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: stretch;
     font-size: var(--font-size-1);
-    width: 100%;
-    height: 100%;
+    padding: 0;
 }
 
-.navbar li {
+.navbar div {
     background-color: var(--nav-item-color);
-    width: 200px;
-    border-radius: 20px;
+    width: 150px;
+    height: 100%;
+    position: relative;
+    border-bottom-right-radius: 50px;
     text-align: center;
+    left: -1rem;
+}
+
+.navbar .home {
+    background-color: #FFEA7B;
+    border-radius: 50px;
+    width: 6rem;
+    height: 6rem;
+    top: -1rem;
+}
+
+.navbar .about {
+    background-color: #aa73c980;
+}
+
+.navbar .skills {
+    background-color: #43aeff80;
+}
+
+.navbar .tools {
+    background-color: #58C77A80;
+}
+
+.navbar .contact {
+    background-color: #f35c6380;
+    margin-left: auto;
+    border-radius: 0;
+    border-bottom-left-radius: 50px;
+    left: 0;
 }
 
 .navbar a {
     display: inline-block;
-    vertical-align: middle;
     color: black;
     text-decoration: none;
     width: 100%;
@@ -100,27 +114,57 @@ img.background{
 /* Content */
 
 .containter {
-    padding-top: 6rem;
+    padding-top: 5rem;
     margin: 0 10%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-rows: minmax(2rem, auto);
     grid-gap: 1em;
+    grid-template-areas: 
+            "header"
+            "about"
+            "skills"
+            "tools"
+            "contact"
+            "footer"
 }
 
 .containter > * {
-    grid-column: 1 / -1;
     padding: 1em;
     box-sizing: border-box;
+    position: relative;
 }
 
 .containter > * {
-    border: 3px solid red;
+    /*border: 3px solid red;*/
 }
 
-.header {
+.containter .background {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* border: 10px solid blue; */
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+}
+
+.containter .header {
+    grid-area: header;
     height: 50vh;
     text-align: center;
+    background: rgb(170,115,201);
+    background: radial-gradient(ellipse, rgba(170,115,201,0.5) 0%, rgba(170,115,201,0.3) 30%, rgba(255,255,255,1) 50%);
+    overflow: hidden;
+}
+
+.bg-header img{
+    position: relative;
+    display: inline-block;
+    transform: translateX(50%) rotate(40deg);
+    margin: auto;
+    filter: invert(81%) sepia(16%) saturate(7424%) hue-rotate(211deg) brightness(84%) contrast(91%);
 }
 
 .header img {
@@ -129,18 +173,60 @@ img.background{
     width: auto;
 }
 
-.about {
+.containter .about {
+    grid-area: about;
+    overflow: hidden;
+}
+
+.containter .skills {
+    grid-area: skills;
+    background: rgb(67,174,255);
+    background: radial-gradient(ellipse, rgba(67,174,255,0.5046393557422969) 0%, rgba(67,174,255,0.30015756302521013) 20%, rgba(255,255,255,1) 50%);
+    overflow: hidden;
 }
 
 .skills > div {
     text-align: center;
 }
 
-.tools {
+.bg-skills img{
+    transform: rotate(104deg);
+    margin: auto;
+    filter: invert(63%) sepia(17%) saturate(1551%) hue-rotate(166deg) brightness(91%) contrast(85%);
+}
 
+.containter .tools {
+    grid-area: tools;
+    background: rgb(88,199,122);
+    background: radial-gradient(ellipse, rgba(88,199,122,0.5018382352941176) 0%, rgba(88,199,122,0.29735644257703087) 30%, rgba(255,255,255,1) 50%);
+    overflow: hidden;
+}
+
+.bg-tools img{
+    transform: rotate(104deg);
+    margin: auto;
+    filter: invert(70%) sepia(51%) saturate(369%) hue-rotate(94deg) brightness(97%) contrast(88%);
+}
+
+.containter .contact {
+    grid-area: contact;
+    overflow: hidden;
+    background: rgb(243,92,99);
+    background: radial-gradient(ellipse, rgba(243,92,99,0.5) 0%, rgba(243,92,99,0.3) 30%, rgba(255,255,255,1) 50%);
+}
+
+.bg-contact img{
+    transform: rotate(21deg);
+    margin: auto;
+    filter: invert(62%) sepia(97%) saturate(2082%) hue-rotate(310deg) brightness(102%) contrast(100%);
 }
 
 .footer{
+    grid-area: footer;
     min-height: 3em;
-    padding: 0;
+    width: 100%;
+    text-align: end;
+    padding: 0 2rem;
+    background: #000;
+    color: #fff;
 }
