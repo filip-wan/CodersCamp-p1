@@ -232,10 +232,24 @@ p {
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 11.36%, rgba(255, 255, 255, 0.27) 31.02%, #FFFFFF 85.02%, #FFFFFF 100%), radial-gradient(147.00px at 50.08% 14.57%, rgba(243, 92, 99, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(243, 92, 99, 0.1);
 }
 
-.header img {
-    display: inline-block;
+.containter .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.header .name {
+    align-self: flex-end;
+    padding: 1em;
+}
+
+.header .headshot {
     height: 300px;
-    width: auto;
+    width: 300px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 7px solid black; 
+    box-shadow: 7px 7px 28px rgba(0, 0, 0, 0.406);
 }
 
 .containter .about {
