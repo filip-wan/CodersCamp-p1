@@ -83,6 +83,11 @@ p {
     text-align: end;
     box-sizing: border-box;
     border-bottom-right-radius: 50px;
+    transition: all .2s ease-out;
+}
+
+.nav-buttons > div:hover {
+    width: 13rem;
 }
 
 .navbar .home {
@@ -96,19 +101,23 @@ p {
 
 .navbar .about {
     background-color: #aa73c9;
-    transform: translateX(-3rem);
+    position: relative;
+    left: -3rem;
+
     z-index: 14;
 }
 
 .navbar .skills {
     background-color: #43aeff;
-    transform: translateX(-6rem);
+    position: relative;
+    left: -6rem;
     z-index: 13;
 }
 
 .navbar .tools {
     background-color: #58C77A;
-    transform: translateX(-9rem);
+    position: relative;
+    left: -9rem;
     z-index: 12;
 }
 
@@ -117,6 +126,7 @@ p {
     margin-left: auto;
     border-radius: 0;
     border-bottom-left-radius: 50px;
+    position: relative;
     left: 0;
     text-align: start;
 }
