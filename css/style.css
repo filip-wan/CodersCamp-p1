@@ -78,7 +78,7 @@ p {
 }
 .nav-buttons > div {
     align-content: center;
-    padding: 1rem;
+    padding: .7rem;
     width: 12rem;
     text-align: end;
     box-sizing: border-box;
@@ -138,6 +138,7 @@ p {
     width: 100%;
     height: 100%;
     line-height: 100%;
+    padding: 0 .7em;
 }
 
 @media only screen and (max-width: 900px) {
@@ -149,6 +150,11 @@ p {
         padding: 0.5rem;
         width: 7rem;
     }
+
+    .nav-buttons > div:hover {
+        width: 8.5rem;
+    }
+
     .navbar .home {
         width: 4rem;
         height: 4rem;
@@ -157,15 +163,15 @@ p {
     }
     
     .navbar .about {
-        transform: translateX(-2rem);
+        left: -2rem;
     }
     
     .navbar .skills {
-        transform: translateX(-4rem);
+        left: -4rem;
     }
     
     .navbar .tools {
-        transform: translateX(-6rem);
+        left: -6rem;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -174,7 +180,7 @@ p {
         border-radius: 0;
         border-bottom-right-radius: 50px;
         text-align: end;
-        transform: translateX(-8rem);
+        left: -8rem;
     }
     .navbar .nav-buttons {
         width: 50%;
@@ -206,7 +212,7 @@ p {
 }
 
 .containter > * {
-    /*border: 3px solid red;*/
+    border: 6px solid blue;
 }
 
 .containter .background {
@@ -252,7 +258,6 @@ p {
     align-self: flex-start;
     margin: 1em;
     line-height: 1em;
-    border: 1px black solid;
 }
 
 .header .headshot {
@@ -267,6 +272,19 @@ p {
 .containter .about {
     grid-area: about;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.containter .about p {
+    border: 2px solid #aa73c9;
+    border-radius: 10px;
+    text-align: center;
+    width: calc(90% - 10vw);
+    max-width: 1000px;
+    padding: 0.7rem;
+    box-sizing: border-box;
+    background-color: #aa73c910;
 }
 
 .skills > div {
@@ -277,6 +295,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .skill-items ul {
