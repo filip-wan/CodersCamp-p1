@@ -142,6 +142,10 @@ p {
 }
 
 @media only screen and (max-width: 900px) {
+    :root {
+        --font-size-0: 14px;
+    }
+
     .navbar {
         height: 2rem;
         font-size: var(--font-size-0);
@@ -175,6 +179,9 @@ p {
     }
 }
 @media only screen and (max-width: 600px) {
+    :root {
+        --font-size-0: 12px;
+    }
     .navbar .contact {
         margin-left: 0;
         border-radius: 0;
@@ -212,7 +219,8 @@ p {
 }
 
 .containter > * {
-    border: 6px solid blue;
+    /* border: 2px solid blue;
+    box-sizing: border-box; */
 }
 
 .containter .background {
@@ -300,7 +308,7 @@ p {
 }
 
 .skill-items ul {
-    height: 4rem;
+    height: auto;
     width: auto;
     border: 3px solid #43aeff;
     border-radius: 20px;
@@ -310,8 +318,8 @@ p {
 }
 
 .skill-items li {
-    margin: .5rem;
-    padding: .5rem;
+    margin: .6rem;
+    padding: .6rem;
     border-radius: 14px;
     background: #43aeff20;
 }
