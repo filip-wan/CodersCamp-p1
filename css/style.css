@@ -1,12 +1,15 @@
 :root {
     --font-ratio: 1.618;
+    --font-ratio: 1.5;
     --font-size-0: 16px;
     --font-size-1: calc(var(--font-ratio) * var(--font-size-0));
     --font-size-2: calc(var(--font-ratio) * var(--font-size-1));
     --font-size-3: calc(var(--font-ratio) * var(--font-size-2));
-    --main-bg-color: rgb(212, 255, 255);
-    --nav-color: rgba(82, 212, 255, 0.418);
-    --nav-item-color: rgb(100, 247, 227);
+    --yellow: #FFEA7B;
+    --purple: #aa73c9;
+    --blue: #43aeff;
+    --green: #58C77A;
+    --red: #f35c63;
 }
 
 html {
@@ -54,7 +57,6 @@ p {
 
 .navbar {
     display: flex;
-    height: 3rem;
     width: 100%;
     position: fixed;
     z-index: 10;
@@ -78,8 +80,8 @@ p {
 }
 .nav-buttons > div {
     align-content: center;
-    padding: .7rem;
-    width: 12rem;
+    padding: .5rem 1rem;
+    width: 9rem;
     text-align: end;
     box-sizing: border-box;
     border-bottom-right-radius: 50px;
@@ -87,11 +89,11 @@ p {
 }
 
 .nav-buttons > div:hover {
-    width: 13rem;
+    width: 12rem;
 }
 
 .navbar .home {
-    background-color: #FFEA7B;
+    background-color: var(--yellow);
     border-radius: 50px;
     width: 6rem;
     height: 6rem;
@@ -100,7 +102,7 @@ p {
 }
 
 .navbar .about {
-    background-color: #aa73c9;
+    background-color: var(--purple);
     position: relative;
     left: -3rem;
 
@@ -108,21 +110,21 @@ p {
 }
 
 .navbar .skills {
-    background-color: #43aeff;
+    background-color: var(--blue);
     position: relative;
     left: -6rem;
     z-index: 13;
 }
 
 .navbar .tools {
-    background-color: #58C77A;
+    background-color: var(--green);
     position: relative;
     left: -9rem;
     z-index: 12;
 }
 
 .navbar .contact {
-    background-color: #f35c63;
+    background-color: var(--red);
     margin-left: auto;
     border-radius: 0;
     border-bottom-left-radius: 50px;
@@ -285,7 +287,7 @@ p {
 }
 
 .containter .about p {
-    border: 2px solid #aa73c9;
+    border: 2px solid var(--purple);
     border-radius: 10px;
     text-align: center;
     width: calc(90% - 10vw);
@@ -302,18 +304,19 @@ p {
 .skill-items {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 .skill-items ul {
     height: auto;
-    width: auto;
-    border: 3px solid #43aeff;
+    border: 3px solid var(--blue);
     border-radius: 20px;
     display: flex;
-    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 3rem;;
     background: #43aeff20;
 }
 
