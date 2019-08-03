@@ -13,13 +13,15 @@
 
     <link rel="stylesheet" href="css/reset_styles.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cc636ae6dc.js"></script>
     <title>Showcase</title>
 </head>
 <body>
     <div class="content">
             <div class="navbar">
                 <div class="home">
-                    <a href="#"></a>
+                    <a href="#"><i class="fas fa-angle-double-up fa-2x"></i></a>
                 </div>
                 <div class="nav-buttons">
                     <div class="about">
@@ -46,7 +48,7 @@
             <div id="about" class="about">
                     <p> I'm a very good in programming skill. 
                         No man be better than this man. 
-                        I shall prove it to you by this site.</p>
+                        I shall prove it to you by this site. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
             </div>
             <div id="skills" class="skills">
                 <div class="row justify-content-center">
@@ -96,27 +98,61 @@
                 <div class="title">
                     <h1>Tools</h1>
                 </div>
-                <div class="tool-list">
-                    <ul>
-                        <li>Visual Code</li>
-                        <li>Visual Studio</li>
-                        <li>Resharper</li>
-                        <li>Azure</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="background">
-                </div>
+                <ul class="tool-list">
+                    <li><a href="https://code.visualstudio.com/" target="_blank" title="Visual Code">
+                        <img src="/media/logo-code.png" alt="Visual Code">
+                    </a></li>
+                    <li><a href="https://visualstudio.microsoft.com/vs/" target="_blank" title="Visual Studio">
+                        <img src="/media/logo-studio.png" alt="Visual Studio">
+                    </a></li>
+                    <li><a href="https://www.jetbrains.com/resharper/" target="_blank" title="Resharper">
+                        <img src="/media/logo-resharper.png" alt="Resharper">
+                    </a></li>
+                    <li><a href="https://git-scm.com/" target="_blank" title="Git">
+                        <img src="/media/logo-git.png" alt="Git">
+                    </a></li>
+                    <li><a href="https://github.com/" target="_blank" title="Github">
+                        <img src="/media/github-brands.svg" alt="Github">
+                    </a></li>
+                </ul>
+                <div class="background"></div>
             </div>
             <div id="contact" class="contact">
-                    <div class="title">
-                        <h1>Contact</h1>
+                <div class="title">
+                    <h1>Contact</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="info card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                You've got a question? Maybe a great business offer? Feel free to contact me through e-mail, classic mail or just call me. You can even use this clever form on the right.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><p>Email: <b><a href="mailto:someone@example.com">someone@example.com</a></b></p></li>
+                            <li class="list-group-item"><p>Phone: <b>+48 605-557-069</b></p> </li>
+                            <li class="list-group-item"><p>Vestibulum at eros</p></li>
+                          </ul>
                     </div>
-                <div class="info"></div>
-                <div class="mail">
-                    <form action="">
-
-                    </form>
+                    <div class="form">
+                        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+                            <div class="form-item form-name">
+                                <label for="input-name">Name:</label>
+                                <input type="text" name="name" id="input-name">
+                            </div>
+                            <div class="form-item form-email">
+                                <label for="input-email">Your Email:</label>
+                                <input type="email" name="email" id="input-email">
+                            </div>
+                            <div class="form-item form-message">
+                                <label for="input-message">Your Message:</label>
+                                <textarea name="message" id="input-message" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="form-item form-sumbit">
+                                <input type="submit" value="Sumbit">
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="background">
                 </div>
