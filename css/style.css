@@ -66,13 +66,13 @@ p {
     padding: 0;
 }
 
-.navbar .home {
+.nav-home {
     position: relative;
     top: -1rem;
     left: -1rem;
 }
 
-.navbar .nav-buttons {
+.nav-buttons {
     display: flex;
     align-items: flex-start;
     flex-grow: 1;
@@ -100,7 +100,7 @@ p {
     font-weight: bold;
 }
 
-.navbar .home {
+.nav-home {
     background-color: var(--yellow);
     border-radius: 50px;
     width: 6rem;
@@ -109,7 +109,7 @@ p {
     z-index: 15;
 }
 
-.navbar .home a {
+.navbar .nav-home a {
     font-size: 130%;
     display: flex;
     align-items: center;
@@ -119,11 +119,11 @@ p {
     transition: all .2s;
 }
 
-.navbar .home a:hover {
+.nav-home a:hover {
     filter: invert(70%);
 }
 
-.navbar .about {
+.nav-about {
     background-color: var(--purple);
     position: relative;
     left: -3rem;
@@ -131,21 +131,21 @@ p {
     z-index: 14;
 }
 
-.navbar .skills {
+.nav-skills {
     background-color: var(--blue);
     position: relative;
     left: -6rem;
     z-index: 13;
 }
 
-.navbar .tools {
+.nav-tools {
     background-color: var(--green);
     position: relative;
     left: -9rem;
     z-index: 12;
 }
 
-.navbar .contact {
+.navbar .nav-contact {
     background-color: var(--red);
     margin-left: auto;
     border-radius: 0;
@@ -153,6 +153,23 @@ p {
     position: relative;
     left: 0;
     text-align: start;
+}
+
+.navbar .contact-buttons {
+    position: absolute;
+    right: 0;
+    top: 2.7rem;
+}
+
+.navbar .contact-buttons > * {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all .2s;
+}
+
+.navbar .contact-buttons > *:hover {
+    opacity: 0.9;
+    filter: grayscale(0);
 }
 
 .navbar a {
@@ -172,7 +189,7 @@ p {
 
     .navbar {
         height: 2rem;
-        font-size: var(--font-size-0);
+        font-size: 1.3rem;
     }
     .nav-buttons > div {
         padding: 0.5rem;
@@ -183,22 +200,22 @@ p {
         width: 8.5rem;
     }
 
-    .navbar .home {
+    .nav-home {
         width: 4rem;
         height: 4rem;
         top: -1rem;
         z-index: 15;
     }
     
-    .navbar .about {
+    .nav-about {
         left: -2rem;
     }
     
-    .navbar .skills {
+    .nav-skills {
         left: -4rem;
     }
     
-    .navbar .tools {
+    .nav-tools {
         left: -6rem;
     }
 }
@@ -206,14 +223,14 @@ p {
     :root {
         --font-size-0: 12px;
     }
-    .navbar .contact {
+    .nav-contact {
         margin-left: 0;
         border-radius: 0;
         border-bottom-right-radius: 50px;
         text-align: end;
         left: -8rem;
     }
-    .navbar .nav-buttons {
+    .nav-buttons {
         width: 50%;
     }
 }
