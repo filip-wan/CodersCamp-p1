@@ -155,20 +155,36 @@ p {
     text-align: start;
 }
 
+.navbar .nav-contact:hover .contact-buttons {
+    animation: contact-buttons .3s infinite 0s ease-out;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
 .navbar .contact-buttons {
+    overflow: hidden;
     position: absolute;
     right: 0;
-    top: 2.7rem;
+    top: -10rem;
+    z-index: -1;
+    padding-left: 2rem;
+    padding-top: 2.7rem;
+}
+
+@keyframes contact-buttons {
+    0%  {top: -10rem}
+    100% {top: 0}
 }
 
 .navbar .contact-buttons > * {
-    opacity: 0.5;
+    opacity: 0.7;
     filter: grayscale(100%);
-    transition: all .2s;
+    transition: all .1s;
 }
 
 .navbar .contact-buttons > *:hover {
-    opacity: 0.9;
+    opacity: 1;
     filter: grayscale(0);
 }
 
@@ -187,12 +203,17 @@ p {
         --font-size-0: 14px;
     }
 
+    .content {
+        width: 99%;
+    }
+
     .navbar {
         height: 2rem;
         font-size: 1.3rem;
     }
     .nav-buttons > div {
         padding: 0.5rem;
+        padding-left: 1rem;
         width: 7rem;
     }
 
@@ -223,15 +244,18 @@ p {
     :root {
         --font-size-0: 12px;
     }
-    .nav-contact {
+    .navbar .nav-contact {
         margin-left: 0;
         border-radius: 0;
         border-bottom-right-radius: 50px;
         text-align: end;
         left: -8rem;
     }
-    .nav-buttons {
+    .navbar .nav-buttons {
         width: 50%;
+    }
+    .navbar .contact-buttons {
+        display: none;
     }
 }
 
@@ -375,11 +399,11 @@ p {
     /* border: 2px black solid; */
     margin: 1rem;
     box-sizing: border-box;
-    transition: all .5s;
+    transition: all .4s;
 }
 
 .tool-list li:hover {
-    transform: scale(2);
+    transform: scale(1.7);
 }
 
 .tool-list li * {
@@ -390,10 +414,48 @@ p {
 .card {
     max-width: 20rem;
     margin: 0 2rem;
+    margin-bottom: 2rem;
 }
 
 .card-text {
     overflow: hidden;
+}
+
+.card .contact-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+.card .contact-buttons > * {
+    filter: grayscale(50%) opacity(.7);
+    transition: all .2s;
+}
+
+.card .contact-buttons > *:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.2);
+}
+
+.map {
+    position:relative;
+    text-align:right;
+    height:17rem;
+    width:100%;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.form {
+    background: #f35c6310;
+    border: 3px var(--red) solid;
+    border-radius: 1rem;
+    padding: 1.1rem;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 
 .form-item {
@@ -402,6 +464,7 @@ p {
     align-items: flex-start;
     margin: .4rem;
 }
+
 .form-item > * {
     margin: .1rem;
 }
